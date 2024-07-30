@@ -19,6 +19,11 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from contacts.views import home, ContactListView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # name= is a name for use in <a href=> in templates
+    path('contacts/', ContactListView.as_view(), name='contacts-list'),
+    path('', home, name='index')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
