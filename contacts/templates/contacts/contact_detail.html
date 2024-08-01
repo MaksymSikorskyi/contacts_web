@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ contact.name }}{% endblock title %}
+
+{% block content %}
+    {% if contact.photo %}
+        <figure>
+            <img src='{{ contact.photo.url }}'>
+        </figure>
+    {% endif %}
+
+    <h1>{{ contact.name }}</h1>
+    
+    <p>
+        <strong>Email: </strong>{{ contact.email}}
+    </p>
+
+    <p>
+        <strong>Phone: </strong>{{ contact.phone}}
+    </p>
+
+    {% if contact.address %}
+        <p>
+            <strong>Address: </strong>{{ contact.address}}
+        </p>
+    {% endif %}
+    
+    {% if contact.notes %}
+        <p>
+            <strong>Notes: </strong>{{ contact.notes}}
+        </p>
+    {% endif %}
+
+    <p><small>Added {{ contact.created_at | date:"N j, Y" }}</small></p>
+{% endblock content %}

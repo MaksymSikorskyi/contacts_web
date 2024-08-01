@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class SexOption(models.TextChoices):
@@ -35,3 +36,8 @@ class Contact(models.Model):
             prefix = ''
 
         return f'{prefix} {self.name}'
+    
+    # IMPORTANT. This method helps generate url
+    def get_absolute_url(self):
+        return reverse("contacts-detail", kwargs={"pk": self.pk})
+    

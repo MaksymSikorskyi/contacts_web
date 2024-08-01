@@ -19,11 +19,14 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from contacts.views import home, ContactListView
+from contacts.views import home, ContactListView, ContactDetailView, ContactCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # second slash in PATH is neccessary
+    path('contacts/create/', ContactCreateView.as_view(), name='contacts-create'),
     # name= is a name for use in <a href=> in templates
     path('contacts/', ContactListView.as_view(), name='contacts-list'),
+    path('contacts/<pk>/', ContactDetailView.as_view(), name='contacts-detail'),
     path('', home, name='index')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
