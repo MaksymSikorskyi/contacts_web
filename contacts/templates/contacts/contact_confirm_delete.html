@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Delete contact{% endblock title %}
+
+{% block content %}
+    <h1>Delete contact</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+
+        <p>Are you sure you want to delete <em>{{ contact.name }} contact?</em></p>
+
+        {{ form.as_p }}
+
+        <button>Yes, delete</button>
+        &nbsp;
+        <a href='{{ contact.get_absolute_url }}'>Cancel</a>
+    </form>
+{% endblock content %}

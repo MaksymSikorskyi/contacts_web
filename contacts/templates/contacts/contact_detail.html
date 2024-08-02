@@ -10,6 +10,11 @@
     {% endif %}
 
     <h1>{{ contact.name }}</h1>
+
+    <p>
+        <a href='{% url 'contacts-update' contact.pk %}'>Edit contact</a> | 
+        <a href='{% url 'contacts-delete' contact.pk %}'>Delete contact</a>
+    </p>
     
     <p>
         <strong>Email: </strong>{{ contact.email}}
