@@ -10,7 +10,7 @@
     {% for contact in contacts %}
         <div>
             <h4>
-                <a href='{{ contact.get_absolute_url }}'>{{ contact.name }}</a>
+                <a href='{{ contact.get_absolute_url }}'>{{ contact.full_name }}</a>
             </h4>
             <p>{{ contact.email }}</p>
         </div>

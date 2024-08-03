@@ -5,6 +5,10 @@ from .models import Contact
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
+    # prepopulated fields for admin interface
+    prepopulated_fields = {
+        'slug': ('sex', 'name',)
+    }
 
     # to show atributes of the class on admin interfase
     list_display = ('pk', 'email', 'full_name','sex', 'phone', 'has_address','created_at')

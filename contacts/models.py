@@ -9,6 +9,7 @@ class SexOption(models.TextChoices):
 
 
 class Contact(models.Model):
+    slug = models.SlugField(unique=True, max_length=150, null=True, blank=False)
     sex = models.CharField(max_length=10, default=SexOption.MAN, choices=SexOption.choices)
     email = models.EmailField(unique=True)
     name = models.CharField(max_length=150)
