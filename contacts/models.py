@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 
 
 class SexOption(models.TextChoices):
@@ -38,7 +39,10 @@ class Contact(models.Model):
 
         return f'{prefix} {self.name}'
     
+    def update_slug(self):
+        self.slug = slugify('-'.join([self.sex, self.name]))
+    
     # IMPORTANT. This method helps generate url
     def get_absolute_url(self):
-        return reverse("contacts-detail", kwargs={"pk": self.pk})
+        return reverse("contacts-detail", kwargs={"slug": self.slug})
     

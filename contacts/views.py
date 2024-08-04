@@ -1,3 +1,6 @@
+from django.forms import BaseModelForm
+from django.utils.text import slugify
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -33,10 +36,20 @@ class ContactCreateView(CreateView):
     model = Contact
     form_class = ContactForm
 
+    # redefining method from parent class
+    def form_valid(self, form):
+        form.instance.update_slug()
+        return super().form_valid(form)
+
 
 class ContactUpdateView(UpdateView):
     model = Contact
     form_class = ContactForm
+
+     # redefining method from parent class
+    def form_valid(self, form):
+        form.instance.update_slug()
+        return super().form_valid(form)
 
 
 class ContactDeleteView(DeleteView):

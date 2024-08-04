@@ -11,7 +11,9 @@ class ContactAdmin(admin.ModelAdmin):
     }
 
     # to show atributes of the class on admin interfase
-    list_display = ('pk', 'email', 'full_name','sex', 'phone', 'has_address','created_at')
+    list_display = (
+        'pk', 'email', 'full_name','slug', 'phone', 'has_address','created_at'
+        )
 
     # to register atributes for search on admin interface
     search_fields = ('email', 'name', 'phone')
