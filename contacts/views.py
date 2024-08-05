@@ -46,7 +46,7 @@ class ContactUpdateView(UpdateView):
     model = Contact
     form_class = ContactForm
 
-     # redefining method from parent class
+    # redefining method from parent class
     def form_valid(self, form):
         form.instance.update_slug()
         return super().form_valid(form)

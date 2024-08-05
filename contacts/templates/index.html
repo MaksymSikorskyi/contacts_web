@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}Index{% endblock title %}
 
 {% block content %}
-    <h1>Welcome, to Contacts App!</h1>
+    <h1>{% blocktranslate %}Welcome, to Contacts App!{% endblocktranslate %}</h1>
 {% endblock content %}
