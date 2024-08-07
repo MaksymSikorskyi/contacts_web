@@ -20,8 +20,8 @@ class Contact(models.Model):
     address = models.TextField(verbose_name=_('address'), blank=True, null=True, default=None)
     notes = models.TextField(verbose_name=_('notes'), blank=True, null=True, default=None)
     photo = models.ImageField(verbose_name=_('photo'), blank=True, null=True, upload_to='%Y/%m')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(verbose_name=_('Created at'), auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name=_('Updated at'), auto_now=True)
 
     class Meta:
         verbose_name = _('contact')

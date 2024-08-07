@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}{{ contact.name }}{% endblock title %}
 
@@ -12,29 +13,29 @@
     <h1>{{ contact.full_name }}</h1>
 
     <p>
-        <a href='{% url 'contacts-update' contact.slug %}'>Edit contact</a> | 
-        <a href='{% url 'contacts-delete' contact.slug %}'>Delete contact</a>
+        <a href='{% url 'contacts-update' contact.slug %}'>{% translate "Edit contact" %}</a> | 
+        <a href='{% url 'contacts-delete' contact.slug %}'>{% translate "Delete contact" %}</a>
     </p>
     
     <p>
-        <strong>Email: </strong>{{ contact.email}}
+        <strong>{% translate "Email: " %}</strong>{{ contact.email}}
     </p>
 
     <p>
-        <strong>Phone: </strong>{{ contact.phone}}
+        <strong>{% translate "Phone: " %}</strong>{{ contact.phone}}
     </p>
 
     {% if contact.address %}
         <p>
-            <strong>Address: </strong>{{ contact.address}}
+            <strong>{% translate "Address: " %}</strong>{{ contact.address}}
         </p>
     {% endif %}
     
     {% if contact.notes %}
         <p>
-            <strong>Notes: </strong>{{ contact.notes}}
+            <strong>{% translate "Notes: " %}</strong>{{ contact.notes}}
         </p>
     {% endif %}
 
-    <p><small>Added {{ contact.created_at | date:"N j, Y" }}</small></p>
+    <p><small>{% translate "Added " %}{{ contact.created_at | date:"N j, Y" }}</small></p>
 {% endblock content %}

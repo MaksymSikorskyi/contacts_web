@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-05 19:40+0300\n"
+"POT-Creation-Date: 2024-08-07 18:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,11 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\contacts\apps.py:8 .\contacts\templates\base.html:21
+#: .\contacts\templates\contacts\contact_list.html:5
+msgid "Contacts"
+msgstr "Контакти"
 
 #: .\contacts\models.py:9
 msgid "Man"
@@ -61,25 +66,66 @@ msgstr "нотатки"
 msgid "photo"
 msgstr "світлина"
 
+#: .\contacts\models.py:23
+msgid "Created at"
+msgstr "Створене"
+
+#: .\contacts\models.py:24
+msgid "Updated at"
+msgstr "Змінене"
+
 #: .\contacts\models.py:27
-#, fuzzy
-#| msgid "Contacts"
 msgid "contact"
-msgstr "Контакти"
+msgstr "Контакт"
 
 #: .\contacts\models.py:28
-#, fuzzy
-#| msgid "Contacts"
 msgid "contacts"
 msgstr "Контакти"
 
-#: .\contacts\templates\contacts\contact_list.html:5
-msgid "Contacts"
+#: .\contacts\templates\base.html:13
+msgid "Contacts App"
 msgstr "Контакти"
 
+#: .\contacts\templates\base.html:18
+msgid "Home"
+msgstr "Головна"
+
+#: .\contacts\templates\contacts\contact_detail.html:16
+msgid "Edit contact"
+msgstr "Додати контакт"
+
+#: .\contacts\templates\contacts\contact_detail.html:17
+msgid "Delete contact"
+msgstr "Зберегти контакт"
+
+#: .\contacts\templates\contacts\contact_detail.html:21
+msgid "Email: "
+msgstr "Імейл: "
+
+#: .\contacts\templates\contacts\contact_detail.html:25
+msgid "Phone: "
+msgstr "Телефон: "
+
+#: .\contacts\templates\contacts\contact_detail.html:30
+msgid "Address: "
+msgstr "Адресса: "
+
+#: .\contacts\templates\contacts\contact_detail.html:36
+msgid "Notes: "
+msgstr "Нотатки: "
+
+#: .\contacts\templates\contacts\contact_detail.html:40
+msgid "Added "
+msgstr "Додане "
+
+#: .\contacts\templates\contacts\contact_form.html:7
 #: .\contacts\templates\contacts\contact_list.html:8
 msgid "Add contact"
 msgstr "Додати контакт"
+
+#: .\contacts\templates\contacts\contact_form.html:14
+msgid "Save contact"
+msgstr "Зберегти контакт"
 
 #: .\contacts\templates\index.html:7
 msgid "Welcome, to Contacts App!"

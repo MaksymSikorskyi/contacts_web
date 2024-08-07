@@ -1,15 +1,16 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}Add contact{% endblock title %}
 
 {% block content %}
-    <h1>Add contact</h1>
+    <h1>{% translate "Add contact" %}</h1>
 
     <form method="post" action="." enctype="multipart/form-data">
         {% csrf_token %}
 
         {{ form.as_p }}
 
-        <button>Save contact</button>
+        <button type="submit">{% translate "Save contact" %}</button>
     </form>
 {% endblock content %}
