@@ -1,5 +1,4 @@
 /public
-*.sqlite3
 /.vscode
 
 # Django stuff:
@@ -40,3 +39,4 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+db.sqlite3
