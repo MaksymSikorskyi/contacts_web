@@ -92,11 +92,11 @@ msgstr "Головна"
 
 #: .\contacts\templates\contacts\contact_detail.html:16
 msgid "Edit contact"
-msgstr "Додати контакт"
+msgstr "Редагувати контакт"
 
 #: .\contacts\templates\contacts\contact_detail.html:17
 msgid "Delete contact"
-msgstr "Зберегти контакт"
+msgstr "Видалити контакт"
 
 #: .\contacts\templates\contacts\contact_detail.html:21
 msgid "Email: "

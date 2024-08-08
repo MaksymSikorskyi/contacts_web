@@ -10,8 +10,7 @@ db.sqlite3-journal
 
 # Translations
 *.mo
-*.pot
-
+i18n/uk/LC_MESSAGES/django.mo
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -41,3 +40,4 @@ share/python-wheels/
 *.egg
 MANIFEST
 db.sqlite3
+
