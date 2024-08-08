@@ -1,5 +1,5 @@
 """
-URL configuration for contacts_web project.
+Contacts URL configuration.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -20,23 +20,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from contacts.views import home
-from contacts.views import (
-    ContactListView, 
-    ContactDetailView, 
-    ContactCreateView, 
-    ContactUpdateView, 
-    ContactDeleteView
-)
+
 
 urlpatterns = [
+    # Django and third party URLs
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
-    # second slash in PATH is neccessary
-    path('contacts/create/', ContactCreateView.as_view(), name='contacts-create'),
-    path('contacts/<slug>/edit/', ContactUpdateView.as_view(), name='contacts-update'),
-    path('contacts/<slug>/delete/', ContactDeleteView.as_view(), name='contacts-delete'),
-    # name= is a name for use in <a href=> in templates
-    path('contacts/', ContactListView.as_view(), name='contacts-list'),
-    path('contacts/<slug>/', ContactDetailView.as_view(), name='contacts-detail'),
     path('', home, name='index'),
+    # Project URLs
+    path('contacts/', include('contacts.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

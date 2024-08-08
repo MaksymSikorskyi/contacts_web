@@ -5,7 +5,7 @@
     <h1>{% translate "Contacts" %}</h1>
 
     <p>
-        <a href='{% url 'contacts-create' %}'>{% translate "Add contact" %}</a>
+        <a href='{% url 'contacts:create' %}'>{% translate "Add contact" %}</a>
     </p>
 
     {% for contact in contacts %}

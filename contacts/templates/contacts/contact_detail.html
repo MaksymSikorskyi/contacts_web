@@ -13,8 +13,8 @@
     <h1>{{ contact.full_name }}</h1>
 
     <p>
-        <a href='{% url 'contacts-update' contact.slug %}'>{% translate "Edit contact" %}</a> | 
-        <a href='{% url 'contacts-delete' contact.slug %}'>{% translate "Delete contact" %}</a>
+        <a href='{% url 'contacts:update' contact.slug %}'>{% translate "Edit contact" %}</a> | 
+        <a href='{% url 'contacts:delete' contact.slug %}'>{% translate "Delete contact" %}</a>
     </p>
     
     <p>

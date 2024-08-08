@@ -49,7 +49,7 @@ class Contact(models.Model):
     def update_slug(self):
         self.slug = slugify('-'.join([self.sex, self.name]))
     
-    # IMPORTANT. This method helps generate url
+    # IMPORTANT. This method helps generate url in templates
     def get_absolute_url(self):
-        return reverse("contacts-detail", kwargs={"slug": self.slug})
+        return reverse("contacts:detail", kwargs={"slug": self.slug})
     
