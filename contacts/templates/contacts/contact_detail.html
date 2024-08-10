@@ -16,6 +16,12 @@
         <a href='{% url 'contacts:update' contact.slug %}'>{% translate "Edit contact" %}</a> | 
         <a href='{% url 'contacts:delete' contact.slug %}'>{% translate "Delete contact" %}</a>
     </p>
+
+    {% if contact.category_id %}
+        <p>
+            <strong>{% trans "Category: " %}{{ contact.category }}</strong>
+        </p>
+    {% endif %}
     
     <p>
         <strong>{% translate "Email: " %}</strong>{{ contact.email}}

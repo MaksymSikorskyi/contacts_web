@@ -11,7 +11,37 @@ class SexOption(models.TextChoices):
     OTHER = 'other', _('Other')
 
 
+class Category(models.Model):
+    name = models.CharField(verbose_name=_('category name'), max_length=50)
+    created_at = models.DateTimeField(verbose_name=_('Created at'), auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name=_('Updated at'), auto_now=True)
+
+    # virtual/relation fields
+    # contacts: list[Contact]
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = _('category')
+        verbose_name_plural = _('categories')
+
+    def __str__(self):
+        return self.name
+    
+    def __repr__(self):
+        return '<Category id={} name={}>'.format(self.pk, self.name)
+
+
 class Contact(models.Model):
+    # lesson n.30 beetroot 35 min
+    # contact_set
+    category = models.ForeignKey(
+        Category, 
+        verbose_name=_('category'),
+        on_delete=models.CASCADE, 
+        null=True, 
+        blank=True, 
+        related_name='contacts'
+    )
     slug = models.SlugField(unique=True, max_length=150, null=True, blank=False)
     sex = models.CharField(verbose_name=_('sex'), max_length=10, default=SexOption.MAN, choices=SexOption.choices)
     email = models.EmailField(verbose_name=_('email'), unique=True)
@@ -34,6 +64,15 @@ class Contact(models.Model):
         return "<Contact id={} email={} phone={}>".format(
             self.pk, self.email, self.name, self.phone
         )
+    
+    @property
+    def category_name(self):
+        # Important, category_id is a self generated id for associons relation data base.
+        return self.category.name if self.category_id else ''
+    
+    @property
+    def has_category(self):
+        return self.category_id is not None
     
     @property
     def full_name(self):

@@ -11,6 +11,9 @@
     {% for contact in contacts %}
         <div>
             <h4>
+                {% if contact.has_category %}
+                [{{ contact.category }}]   
+                {% endif %}
                 <a href='{{ contact.get_absolute_url }}'>{{ contact.full_name }}</a>
             </h4>
             <p>{{ contact.email }}</p>

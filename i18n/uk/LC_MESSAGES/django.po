@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-07 18:01+0300\n"
+"POT-Creation-Date: 2024-08-10 18:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,47 +38,59 @@ msgstr "Жінка"
 msgid "Other"
 msgstr "Інше"
 
-#: .\contacts\models.py:16
-msgid "sex"
-msgstr "стать"
+#: .\contacts\models.py:15
+msgid "category name"
+msgstr "ім'я категорії"
 
-#: .\contacts\models.py:17
-msgid "email"
-msgstr "імейл"
-
-#: .\contacts\models.py:18
-msgid "name"
-msgstr "ім'я"
-
-#: .\contacts\models.py:19
-msgid "phone"
-msgstr "телефон"
-
-#: .\contacts\models.py:20
-msgid "address"
-msgstr "адресса"
-
-#: .\contacts\models.py:21
-msgid "notes"
-msgstr "нотатки"
-
-#: .\contacts\models.py:22
-msgid "photo"
-msgstr "світлина"
-
-#: .\contacts\models.py:23
+#: .\contacts\models.py:16 .\contacts\models.py:53
 msgid "Created at"
 msgstr "Створене"
 
-#: .\contacts\models.py:24
+#: .\contacts\models.py:17 .\contacts\models.py:54
 msgid "Updated at"
 msgstr "Змінене"
 
-#: .\contacts\models.py:27
+#: .\contacts\models.py:24 .\contacts\models.py:39
+msgid "category"
+msgstr "категорія"
+
+#: .\contacts\models.py:25
+msgid "categories"
+msgstr "категорії"
+
+#: .\contacts\models.py:46
+msgid "sex"
+msgstr "стать"
+
+#: .\contacts\models.py:47
+msgid "email"
+msgstr "імейл"
+
+#: .\contacts\models.py:48
+msgid "name"
+msgstr "ім'я"
+
+#: .\contacts\models.py:49
+msgid "phone"
+msgstr "телефон"
+
+#: .\contacts\models.py:50
+msgid "address"
+msgstr "адресса"
+
+#: .\contacts\models.py:51
+msgid "notes"
+msgstr "нотатки"
+
+#: .\contacts\models.py:52
+msgid "photo"
+msgstr "світлина"
+
+#: .\contacts\models.py:57
 msgid "contact"
 msgstr "Контакт"
 
-#: .\contacts\models.py:28
+#: .\contacts\models.py:58
 msgid "contacts"
 msgstr "Контакти"
 
@@ -98,23 +110,27 @@ msgstr "Редагувати контакт"
 msgid "Delete contact"
 msgstr "Видалити контакт"
 
-#: .\contacts\templates\contacts\contact_detail.html:21
+#: .\contacts\templates\contacts\contact_detail.html:22
+msgid "Category: "
+msgstr "Категорія: "
+
+#: .\contacts\templates\contacts\contact_detail.html:27
 msgid "Email: "
 msgstr "Імейл: "
 
-#: .\contacts\templates\contacts\contact_detail.html:25
+#: .\contacts\templates\contacts\contact_detail.html:31
 msgid "Phone: "
 msgstr "Телефон: "
 
-#: .\contacts\templates\contacts\contact_detail.html:30
+#: .\contacts\templates\contacts\contact_detail.html:36
 msgid "Address: "
 msgstr "Адресса: "
 
-#: .\contacts\templates\contacts\contact_detail.html:36
+#: .\contacts\templates\contacts\contact_detail.html:42
 msgid "Notes: "
 msgstr "Нотатки: "
 
-#: .\contacts\templates\contacts\contact_detail.html:40
+#: .\contacts\templates\contacts\contact_detail.html:46
 msgid "Added "
 msgstr "Додане "
 

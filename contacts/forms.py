@@ -6,7 +6,7 @@ from .models import Contact
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ('sex', 'name','photo', 'email', 'phone', 'address', 'notes')
+        fields = ('category', 'sex', 'name','photo', 'email', 'phone', 'address', 'notes')
         # standart widgets customization
         widgets = {
             'address': forms.Textarea(attrs={'rows': 2}),

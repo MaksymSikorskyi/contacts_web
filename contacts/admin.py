@@ -1,10 +1,13 @@
 from django.contrib import admin
 
-from .models import Contact
+from .models import Contact, Category
 
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
+    # !!! optimisation requests on DB( n+1 request problem)
+    list_select_related = ('category',)
+
     # prepopulated fields for admin interface
     prepopulated_fields = {
         'slug': ('sex', 'name',)
@@ -12,8 +15,15 @@ class ContactAdmin(admin.ModelAdmin):
 
     # to show atributes of the class on admin interfase
     list_display = (
-        'pk', 'email', 'full_name','slug', 'phone', 'has_address','created_at'
-        )
+        'pk', 
+        'email', 
+        'category',
+        'full_name',
+        'slug', 
+        'phone', 
+        'has_address',
+        'created_at'
+    )
 
     # to register atributes for search on admin interface
     search_fields = ('email', 'name', 'phone')
@@ -22,9 +32,9 @@ class ContactAdmin(admin.ModelAdmin):
     list_display_links = ('email', 'full_name')
 
     # items for filtering on admin interface
-    list_filter = ('sex', 'created_at')
+    list_filter = ('sex', 'created_at', 'category')
 
-    # the name of the field is selfeplainatory
+    # the name of the field is selfexplainatory
     readonly_fields =('created_at', 'updated_at')
 
     # ordering of items displayed on admin interface
@@ -36,3 +46,12 @@ class ContactAdmin(admin.ModelAdmin):
     # method to display result on admin interfase
     def has_address(self, obj: 'Contact'):
         return obj.address is not None and len(obj.address.strip()) > 0
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'name', 'created_at')
+    list_display_links = ('pk', 'name')
+    list_filter = ('created_at',)
+    readonly_fields =('created_at', 'updated_at')
+

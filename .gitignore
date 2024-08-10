@@ -1,6 +1,7 @@
-# Does it works&
+# Does it works?
 /public
 /.vscode
+/contacts/migrations
 
 # Django stuff:
 *.log
