@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from django.forms import BaseModelForm
 from django.utils.text import slugify
 from django.http import HttpResponse
@@ -7,7 +8,7 @@ from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView
     )
 
-from .models import Contact
+from .models import Contact, Category
 from .forms import ContactForm
 
 
@@ -23,6 +24,30 @@ class ContactListView(ListView):
     queryset = Contact.objects.order_by('name')
     # important! name for use in templates
     context_object_name = 'contacts'
+
+    # !!! revriting legacy method for filtration
+    def get_queryset(self):
+        qs = super().get_queryset()
+
+        # additional filtration
+        category_id = self.request.GET.get('category')
+        if category_id:
+            qs = qs.filter(category_id=category_id)
+
+        return qs
+    
+    # !!!  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        category_id = self.request.GET.get('category')
+
+        context['category'] = None
+
+        if category_id:
+            context['category'] = Category.objects.get(pk=category_id)
+
+        return context
 
 
 # another example of generic views from Django lib
