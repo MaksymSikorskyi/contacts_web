@@ -20,8 +20,10 @@ def home(request):
 # Generic views in dgango docs views section. Class based handler
 class ContactListView(ListView):
     model = Contact
-    # for setting query
-    queryset = Contact.objects.order_by('name')
+    # for setting query. 
+    # !!! important, .select_related() is a method for decreasing requests on DB
+    queryset = Contact.objects.order_by('name').select_related('category')
+    
     # important! name for use in templates
     context_object_name = 'contacts'
 
@@ -33,7 +35,6 @@ class ContactListView(ListView):
         category_id = self.request.GET.get('category')
         if category_id:
             qs = qs.filter(category_id=category_id)
-
         return qs
     
     # !!!  
