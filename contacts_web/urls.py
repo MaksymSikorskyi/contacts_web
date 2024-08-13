@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 
 from contacts.views import home
 
+from debug_toolbar.toolbar import debug_toolbar_urls
+
 
 urlpatterns = [
     # Django and third party URLs
@@ -29,4 +31,4 @@ urlpatterns = [
     path('', home, name='index'),
     # Project URLs
     path('contacts/', include('contacts.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + debug_toolbar_urls()

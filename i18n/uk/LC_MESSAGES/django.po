@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-10 19:15+0300\n"
+"POT-Creation-Date: 2024-08-11 19:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,8 @@ msgstr ""
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: .\contacts\apps.py:8 .\contacts\templates\base.html:21
-#: .\contacts\templates\contacts\contact_list.html:9
+#: .\contacts\templates\contacts\contact_list.html:8
+#: .\contacts\templates\contacts\contact_list.html:17
 msgid "Contacts"
 msgstr "Контакти"
 
@@ -111,7 +112,8 @@ msgid "Delete contact"
 msgstr "Видалити контакт"
 
 #: .\contacts\templates\contacts\contact_detail.html:22
-#: .\contacts\templates\contacts\contact_list.html:7
+#: .\contacts\templates\contacts\contact_list.html:6
+#: .\contacts\templates\contacts\contact_list.html:15
 msgid "Category: "
 msgstr "Категорія: "
 
@@ -136,7 +138,7 @@ msgid "Added "
 msgstr "Додане "
 
 #: .\contacts\templates\contacts\contact_form.html:7
-#: .\contacts\templates\contacts\contact_list.html:14
+#: .\contacts\templates\contacts\contact_list.html:22
 msgid "Add contact"
 msgstr "Додати контакт"
 

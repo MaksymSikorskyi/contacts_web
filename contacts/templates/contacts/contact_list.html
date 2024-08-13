@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block title %}
+    {% if category %}
+        {% trans "Category: " %}{{ category.name }}
+    {% else %}
+        {% translate "Contacts" %}
+    {% endif %}
+{% endblock title %}
+
 {% block content %}
     <h1>
         {% if category %}
