@@ -4,5 +4,10 @@
 {% block title %}Index{% endblock title %}
 
 {% block content %}
-    <h1>{% translate "Welcome, to Contacts App!" %}</h1>
+    <section>
+        <h1>{% translate "Welcome, to Contacts App!" %}</h1>
+        <p>
+            {% lorem 1 p random %}
+        </p>
+    </section>
 {% endblock content %}

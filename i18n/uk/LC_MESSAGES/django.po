@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-11 19:46+0300\n"
+"POT-Creation-Date: 2024-08-15 16:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,9 +21,9 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: .\contacts\apps.py:8 .\contacts\templates\base.html:21
-#: .\contacts\templates\contacts\contact_list.html:8
+#: .\contacts\apps.py:8 .\contacts\templates\contacts\contact_list.html:8
 #: .\contacts\templates\contacts\contact_list.html:17
+#: .\contacts_web\templates\base.html:26
 msgid "Contacts"
 msgstr "Контакти"
 
@@ -95,14 +95,6 @@ msgstr "Контакт"
 msgid "contacts"
 msgstr "Контакти"
 
-#: .\contacts\templates\base.html:13
-msgid "Contacts App"
-msgstr "Контакти"
-
-#: .\contacts\templates\base.html:18
-msgid "Home"
-msgstr "Головна"
-
 #: .\contacts\templates\contacts\contact_detail.html:16
 msgid "Edit contact"
 msgstr "Редагувати контакт"
@@ -146,6 +138,26 @@ msgstr "Додати контакт"
 msgid "Save contact"
 msgstr "Зберегти контакт"
 
-#: .\contacts\templates\index.html:7
+#: .\contacts\templates\index.html:8
 msgid "Welcome, to Contacts App!"
 msgstr "Вітаємо в додатку Контакти!"
+
+#: .\contacts_web\templates\base.html:18
+msgid "Contacts App"
+msgstr "Контакти"
+
+#: .\contacts_web\templates\base.html:23
+msgid "Home"
+msgstr "Головна"
+
+#: .\contacts_web\templates\base.html:29
+msgid "Login"
+msgstr "Увійти"
+
+#: .\contacts_web\templates\base.html:32
+msgid "Register"
+msgstr "Зареєструватися"
+
+#: .\contacts_web\templates\base.html:40
+msgid "Messages:"
+msgstr "Повідомлення:"

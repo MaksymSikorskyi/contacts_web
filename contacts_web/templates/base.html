@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <title>{% block title %}Home{% endblock %}Contcts Application</title>
+
+    <title>{% block title %} {% block head_title %}Home{% endblock head_title %}{% endblock %}Contcts Application</title>
+
 </head>
+
+{% block extra_head %}{% endblock extra_head %}
+
 <body>
     <header>
         <h1>{% translate "Contacts App" %}</h1>
@@ -20,9 +25,31 @@
                 <li>
                     <a href='{% url "contacts:list" %}'>{% translate "Contacts" %}</a>
                 </li>
+                
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href='{% url "account_logout" %}'>{% translate "Log out" %}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href='{% url "account_login" %}'>{% translate "Log in" %}</a>
+                    </li>
+                    <li>
+                        <a href='{% url "account_signup" %}'>{% translate "Signup" %}</a>
+                    </li>
+                {% endif %}
             </ul>
         </nav>
     </header>
+
+    {% if messages %}
+        <div>
+            <strong>{% trans "Messages:" %}</strong>
+            <ul>
+                {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+            </ul>
+        </div>
+    {% endif %}
 
     <main>
         {% block content %}{% endblock content %}
@@ -46,4 +73,7 @@
             <button type="submit">Change</button>
         </form>
     </footer>
+
+    {% block extra_body %}
+    {% endblock extra_body %}
 </body>
