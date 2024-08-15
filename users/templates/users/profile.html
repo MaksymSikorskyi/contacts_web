@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ current_user.get_short_name }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ current_user.get_short_name }}</h1>
+
+    <p>
+        <a href='{% url 'account_change_password' %}'>{% translate "Change password" %}</a> | 
+        <a href='{% url 'account_email' %}'>{% translate "Change email" %}</a>
+    </p>
+
+    <p>
+        <strong>{% translate "Username: " %}</strong>{{ current_user.username }}
+    </p>
+
+    <p>
+        <strong>{% translate "Email: " %}</strong>{{ current_user.email }}
+    </p>
+
+    {% if current_user.firstname or current_user.lastname %}
+        <p>
+            <strong>{% translate "Name: " %}</strong>{{ current_user.get_full_name }}
+        </p>
+    {% endif %}
+
+{% endblock content %}

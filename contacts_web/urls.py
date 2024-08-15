@@ -29,7 +29,9 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
-    path('', home, name='index'),
+    
     # Project URLs
+    path('', home, name='index'),
     path('contacts/', include('contacts.urls')),
+    path('accounts/', include('users.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + debug_toolbar_urls()

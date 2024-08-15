@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.admin.sites',
     # project apps
     'contacts',
+    'users',
     # third party apps
     'allauth',
     'allauth.account',
