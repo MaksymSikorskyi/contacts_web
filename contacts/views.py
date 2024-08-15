@@ -1,7 +1,4 @@
-from django.db.models.query import QuerySet
-from django.forms import BaseModelForm
-from django.utils.text import slugify
-from django.http import HttpResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -18,7 +15,7 @@ def home(request):
 
 
 # Generic views in dgango docs views section. Class based handler
-class ContactListView(ListView):
+class ContactListView(LoginRequiredMixin, ListView):
     model = Contact
     # for setting query. 
     # !!! important, .select_related() is a method for decreasing requests on DB
@@ -52,13 +49,13 @@ class ContactListView(ListView):
 
 
 # another example of generic views from Django lib
-class ContactDetailView(DetailView):
+class ContactDetailView(LoginRequiredMixin, DetailView):
     model = Contact
     context_object_name = 'contact'
 
 
 # class for forms
-class ContactCreateView(CreateView):
+class ContactCreateView(LoginRequiredMixin, CreateView):
     model = Contact
     form_class = ContactForm
 
@@ -68,7 +65,7 @@ class ContactCreateView(CreateView):
         return super().form_valid(form)
 
 
-class ContactUpdateView(UpdateView):
+class ContactUpdateView(LoginRequiredMixin, UpdateView):
     model = Contact
     form_class = ContactForm
 
@@ -78,7 +75,7 @@ class ContactUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-class ContactDeleteView(DeleteView):
+class ContactDeleteView(LoginRequiredMixin, DeleteView):
     model = Contact
     success_url = reverse_lazy('contacts-list')
     context_object_name = 'contact'

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # dev apps
+    'django_extensions',
     "debug_toolbar",
 ]
 
