@@ -28,6 +28,9 @@
                 
                 {% if user.is_authenticated %}
                     <li>
+                        <a href='{% url "users:profile" %}'>{% translate "Profile" %}</a>
+                    </li>
+                    <li>
                         <a href='{% url "account_logout" %}'>{% translate "Log out" %}</a>
                     </li>
                 {% else %}
