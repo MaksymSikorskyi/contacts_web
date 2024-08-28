@@ -42,3 +42,5 @@ share/python-wheels/
 MANIFEST
 db.sqlite3
 
+# Secret
+.env
