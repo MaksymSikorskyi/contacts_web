@@ -10,7 +10,7 @@
         </figure>
     {% endif %}
 
-    <h1>{{ contact.full_name }}</h1>
+    <h1>{{ contact.full_name }} {% if contact.is_favorite %}<small>{% trans "Favorite" %}</small>{% endif %}</h1>
 
     <p>
         <a href='{% url 'contacts:update' contact.slug %}'>{% translate "Edit contact" %}</a> | 

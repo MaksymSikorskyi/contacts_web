@@ -61,6 +61,9 @@ class Contact(models.Model):
     photo = models.ImageField(
         verbose_name=_("photo"), blank=True, null=True, upload_to="%Y/%m"
     )
+    is_favorite = models.BooleanField(
+        verbose_name=_("is favorite"), default=False, db_index=True
+    )
     created_at = models.DateTimeField(verbose_name=_("Created at"), auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name=_("Updated at"), auto_now=True)
 

@@ -10,4 +10,16 @@
             {% lorem 1 p random %}
         </p>
     </section>
+
+    {% for contact in favorite_contacts %}
+        <div>
+            <h4>
+                {% if contact.has_category %}
+                    [<a href='{% url "contacts:list" %}?category={{ contact.category_id }}'>{{ contact.category }}</a>]   
+                {% endif %}
+                <a href='{{ contact.get_absolute_url }}'>{{ contact.full_name }}</a>
+            </h4>
+            <p>{{ contact.email }}</p>
+        </div>
+    {% endfor %}
 {% endblock content %}
