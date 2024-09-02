@@ -11,7 +11,9 @@
         </p>
     </section>
 
-    {% for contact in favorite_contacts %}
-        {% include "contacts/_contact.html" %}
-    {% endfor %}
+    {% if user.is_authenticated %}
+        {% for contact in favorite_contacts %}
+            {% include "contacts/_contact.html" %}
+        {% endfor %}
+    {% endif %}
 {% endblock content %}

@@ -15,7 +15,10 @@ from .forms import ContactForm
 
 # functional based handler, context argument is the name for templates
 def home(request):
-    fav_contacts = Contact.objects.filter(is_favorite=True)
+    fav_contacts = []
+
+    if request.user.is_authenticated:
+        fav_contacts = Contact.objects.filter(is_favorite=True)
     return render(request, "index.html", context={'favorite_contacts': fav_contacts})
 
 
