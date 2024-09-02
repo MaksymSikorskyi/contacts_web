@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-20 14:54+0300\n"
+"POT-Creation-Date: 2024-09-02 11:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,7 +110,7 @@ msgid "Category: "
 msgstr "Категорія: "
 
 #: .\contacts\templates\contacts\contact_detail.html:27
-#: .\users\templates\users\profile.html:19
+#: .\users\templates\users\profile.html:20
 msgid "Email: "
 msgstr "Імейл: "
 
@@ -152,18 +152,22 @@ msgid "Home"
 msgstr "Головна"
 
 #: .\contacts_web\templates\base.html:31
+msgid "Profile"
+msgstr "Профіль"
+
+#: .\contacts_web\templates\base.html:34
 msgid "Log out"
 msgstr "Вийти"
 
-#: .\contacts_web\templates\base.html:35
+#: .\contacts_web\templates\base.html:38
 msgid "Log in"
 msgstr "Увійти"
 
-#: .\contacts_web\templates\base.html:38
+#: .\contacts_web\templates\base.html:41
 msgid "Signup"
 msgstr "Зареєструватися"
 
-#: .\contacts_web\templates\base.html:47
+#: .\contacts_web\templates\base.html:50
 msgid "Messages:"
 msgstr "Повідомлення:"
 
@@ -172,19 +176,21 @@ msgid "Users"
 msgstr "Користувачі"
 
 #: .\users\templates\users\profile.html:10
+msgid "Social auth"
+msgstr ""
+
+#: .\users\templates\users\profile.html:11
 msgid "Change password"
 msgstr "Змінити пароль"
 
-#: .\users\templates\users\profile.html:11
+#: .\users\templates\users\profile.html:12
 msgid "Change email"
 msgstr "Змінити імейл"
 
-#: .\users\templates\users\profile.html:15
+#: .\users\templates\users\profile.html:16
 msgid "Username: "
 msgstr "Користувач: "
 
-#: .\users\templates\users\profile.html:24
+#: .\users\templates\users\profile.html:25
 msgid "Name: "
 msgstr "Ім'я: "
-
-
