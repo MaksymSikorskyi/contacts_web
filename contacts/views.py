@@ -18,8 +18,12 @@ def home(request):
     fav_contacts = []
 
     if request.user.is_authenticated:
-        fav_contacts = Contact.objects.filter(is_favorite=True)
-    return render(request, "index.html", context={'favorite_contacts': fav_contacts})
+        fav_contacts = (
+            Contact.objects.select_related("category")
+            .filter(is_favorite=True)
+            .order_by("name")[:4]
+        )
+    return render(request, "index.html", context={"favorite_contacts": fav_contacts})
 
 
 # Generic views in dgango docs views section. Class based handler

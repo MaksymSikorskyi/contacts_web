@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-02 11:20+0300\n"
+"POT-Creation-Date: 2024-09-03 16:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,11 +43,11 @@ msgstr "Інше"
 msgid "category name"
 msgstr "ім'я категорії"
 
-#: .\contacts\models.py:16 .\contacts\models.py:53
+#: .\contacts\models.py:16 .\contacts\models.py:67
 msgid "Created at"
 msgstr "Створене"
 
-#: .\contacts\models.py:17 .\contacts\models.py:54
+#: .\contacts\models.py:17 .\contacts\models.py:68
 msgid "Updated at"
 msgstr "Змінене"
 
@@ -59,41 +59,49 @@ msgstr "категорія"
 msgid "categories"
 msgstr "категорії"
 
-#: .\contacts\models.py:46
+#: .\contacts\models.py:47
 msgid "sex"
 msgstr "стать"
 
-#: .\contacts\models.py:47
+#: .\contacts\models.py:52
 msgid "email"
 msgstr "імейл"
 
-#: .\contacts\models.py:48
+#: .\contacts\models.py:53
 msgid "name"
 msgstr "ім'я"
 
-#: .\contacts\models.py:49
+#: .\contacts\models.py:54
 msgid "phone"
 msgstr "телефон"
 
-#: .\contacts\models.py:50
+#: .\contacts\models.py:56
 msgid "address"
 msgstr "адресса"
 
-#: .\contacts\models.py:51
+#: .\contacts\models.py:59
 msgid "notes"
 msgstr "нотатки"
 
-#: .\contacts\models.py:52
+#: .\contacts\models.py:62
 msgid "photo"
 msgstr "світлина"
 
-#: .\contacts\models.py:57
+#: .\contacts\models.py:65
+msgid "is favorite"
+msgstr "є обраним"
+
+#: .\contacts\models.py:71
 msgid "contact"
 msgstr "Контакт"
 
-#: .\contacts\models.py:58
+#: .\contacts\models.py:72
 msgid "contacts"
 msgstr "Контакти"
+
+#: .\contacts\templates\contacts\contact_detail.html:13
+msgid "Favorite"
+msgstr "Обраний"
 
 #: .\contacts\templates\contacts\contact_detail.html:16
 msgid "Edit contact"
@@ -140,6 +148,10 @@ msgid "Save contact"
 msgstr "Зберегти контакт"
 
 #: .\contacts\templates\index.html:8
+msgid "Favorite contacts"
+msgstr "Обрані контакти"
+
+#: .\contacts\templates\index.html:14
 msgid "Welcome, to Contacts App!"
 msgstr "Вітаємо в додатку Контакти!"
 
@@ -177,7 +189,7 @@ msgstr "Користувачі"
 
 #: .\users\templates\users\profile.html:10
 msgid "Social auth"
-msgstr ""
+msgstr "Авторизація через соцмережу"
 
 #: .\users\templates\users\profile.html:11
 msgid "Change password"

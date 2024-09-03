@@ -4,16 +4,17 @@
 {% block title %}Index{% endblock title %}
 
 {% block content %}
-    <section>
-        <h1>{% translate "Welcome, to Contacts App!" %}</h1>
-        <p>
-            {% lorem 1 p random %}
-        </p>
-    </section>
-
     {% if user.is_authenticated %}
+        <h1>{% trans "Favorite contacts" %}</h1>
         {% for contact in favorite_contacts %}
             {% include "contacts/_contact.html" %}
         {% endfor %}
+    {% else %}
+        <section>
+            <h1>{% translate "Welcome, to Contacts App!" %}</h1>
+            <p>
+                {% lorem 1 p random %}
+            </p>
+        </section>
     {% endif %}
 {% endblock content %}
