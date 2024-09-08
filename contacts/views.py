@@ -8,6 +8,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+#from django.core
 
 from .models import Contact, Category
 from .forms import ContactForm
@@ -35,6 +36,8 @@ class ContactListView(LoginRequiredMixin, ListView):
 
     # important! name for use in templates
     context_object_name = "contacts"
+
+    paginate_by = 3
 
     # !!! revriting legacy method for filtration
     def get_queryset(self):
